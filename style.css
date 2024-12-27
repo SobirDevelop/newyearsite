@@ -1,0 +1,124 @@
+body {
+    font-family: fantasy;
+    text-align: center;
+    background:url(https://images.unsplash.com/photo-1609536376479-0f52fc5b8475?q=80&w=735&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);    background-size: cover;
+    margin: 0;
+    overflow: hidden;
+}
+
+#count {
+    font-size: 30px;
+    font-weight: bold;
+    margin-top: 20px;
+    color: #fff;
+    text-shadow: 0 0 10px #00ffdd, 0 0 20px #00ffdd;
+    animation: textGlow 2s infinite alternate; /* Yoritish animatsiyasi */
+}
+
+.dibba {
+    width: 350px;
+    height: auto;
+    margin: 150px auto;
+    padding: 20px;
+    border-radius: 25px;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(10px);
+    color: white;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.5), 0 0 40px rgba(255, 255, 255, 0.3);
+    text-align: center;
+    animation: fadeIn 2s ease-in-out;
+}
+
+#wish {
+    font-size: 28px;
+    margin-bottom: 15px;
+    font-weight: bold;
+    color: #ffd700;
+    animation: glow 2s infinite alternate;
+}
+
+#mess {
+    font-size: 18px;
+    font-family: "Curlz MT", cursive;
+    margin-top: 20px;
+    line-height: 1.6;
+    color: #fff;
+    text-shadow: 0 0 5px #ffd700;
+}
+
+.star {
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    background: white;
+    border-radius: 50%;
+    animation: starFall 3s linear infinite;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+}
+
+@keyframes starFall {
+    0% {
+        top: -10px;
+        left: calc(100% * var(--star-left));
+        opacity: 1;
+        transform: scale(1);
+    }
+    100% {
+        top: 100%;
+        left: calc(100% * var(--star-left));
+        opacity: 0;
+        transform: scale(0.5);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes glow {
+    0% {
+        text-shadow: 0 0 10px #ffd700, 0 0 20px #ffd700;
+    }
+    100% {
+        text-shadow: 0 0 20px #ff4500, 0 0 30px #ff4500;
+    }
+}
+
+@keyframes textGlow {
+    0% {
+        color: #fff;
+        text-shadow: 0 0 5px #00ffdd, 0 0 10px #00ffdd;
+    }
+    100% {
+        color: #ff4500;
+        text-shadow: 0 0 5px #ff4500, 0 0 10px #ff4500;
+    }
+}
+
+/* Media query mobil moslamalar uchun */
+@media (max-width: 768px) {
+    .dibba {
+        width: 90%;
+        margin-top: 100px;
+        padding: 10px;
+    }
+
+    #wish {
+        font-size: 22px;
+    }
+
+    #mess {
+        font-size: 16px;
+    }
+
+    #count {
+        font-size: 24px;
+    }
+}

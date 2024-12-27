@@ -1,0 +1,43 @@
+<!--Due to some mistake i deleted previous one :)--->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Countdown Clock</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+<div class="dibba">
+    <p id="wish">Yangi Yil muborak!!<br> 2025-yilga xush kelibsiz...<br></p>
+    <p id="count"></p>
+    
+    <p id="mess">"Sizga kulgi, sevgi, quvonch va faqat vaqti-vaqti bilan ekzistensial qo'rquvga to'la yil bo'lishini tilayman!!"</p>
+    </div>
+    <script>
+      
+        const countDate = new Date("January 1, 2025 00:00:00").getTime();
+        
+        setInterval(() => {
+            const now = new Date().getTime();
+            const distance = countDate - now;
+            
+            
+            const kun = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const soat = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const daqiqa = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const soniya = Math.floor((distance % (1000 * 60)) / 1000);
+            
+            
+            document.getElementById("count").innerHTML = `${kun}d: ${soat}h: ${daqiqa}m: ${soniya}s`;
+        }, 1000);
+    </script>
+    <div class="stars">
+        <div class="star" style="--star-left: 0.1;"></div>
+        <div class="star" style="--star-left: 0.3;"></div>
+        <div class="star" style="--star-left: 0.5;"></div>
+        <div class="star" style="--star-left: 0.7;"></div>
+        <div class="star" style="--star-left: 0.9;"></div>
+    </div>
+    
+</body>
+</html>
